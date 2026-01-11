@@ -40,7 +40,7 @@ header::before {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 300px;
   gap: 40px;
   align-items: center;
 }
@@ -102,10 +102,17 @@ header::before {
 /* Photo Section */
 .photo-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
 }
 
 .profile-photo {
-  height: 300px; /* 3:2 aspect ratio */
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
   border-radius: 15px;
   border: 4px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -118,6 +125,8 @@ header::before {
 }
 
 .photo-placeholder {
+  width: 100%;
+  max-width: 300px;
   height: 300px;
   background: linear-gradient(
     45deg,
@@ -277,6 +286,22 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .header-content {
+    grid-template-columns: 1fr 250px;
+    gap: 30px;
+  }
+  
+  .photo-container {
+    max-width: 250px;
+  }
+  
+  .profile-photo {
+    max-width: 250px;
+    height: 250px;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     background: linear-gradient(
